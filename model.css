@@ -1,0 +1,7 @@
+footer{
+    position: fixed;
+    margin: 5px;
+    border: 1px;
+    border-color: black;
+    bottom: 0;
+}

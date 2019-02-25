@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./model.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>消费者*品类</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="page" id="commandPage">
+			<div class="pageHd">
+				<div class="cell" id="proCommandTitle">
+					<h1>您的产品要求</h1>
+				</div>
+			</div>
+			<div class="pageBd">
+				<div class="listArea" id="commandList">
+
+					<input type="radio" id="one" value="One" v-model="picked">
+					<label for="one">服装饰品</label>
+					<br>
+					<input type="radio" id="two" value="Two" v-model="picked">
+					<label for="two">书籍文具</label>
+					<br>
+					<input type="radio" id="three" value="Three" v-model="picked">
+					<label for="three">电子产品</label>
+					<br>
+					<span>Picked: {{ picked }}</span>
+
+				</div>
+				<div class="btnArea" id="submitCommand">
+					<a href="javascript:" id="showPro">开始浏览</a>
+				</div>
+			</div>
+		</div>
+		<div class="page" id="proPage">
+			<div class="pageHd">
+				<div class="cell" id="proListTitle">
+					<h1>根据您的要求，系统为您推荐如下商品：</h1>
+				</div>
+			</div>
+			<div class="pageBd">
+				<div class="listArea" id="proList">
+					<div class="cell">
+						<div class="proCell" id="pros">
+
+							<div id="todo-list-example">
+								<ul>
+									<!-- <li is="todo-item" v-for="(todo, index) in todos"
+                  v-bind:key="todo.id" v-bind:title="todo.title"
+                  v-bind:price="todo.price" v-on:add="say('hi')"></li> -->
+									<li v-for="item in todos">
+										<img :src="item.imgUrl" alt="图片">
+										<br>
+										{{item.title}}
+										<br>
+										{{ item.price }}
+										<div class="recommendIns">超过95%的消费者都在买</div>
+										<button>+</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="footer"></div>
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./proData.js"></script>
+
+
+</body>
+
+</html>
